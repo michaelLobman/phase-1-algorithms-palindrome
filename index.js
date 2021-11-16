@@ -1,13 +1,27 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  const wordAsArray = word.split("");
+  const reversedArray = wordAsArray.reverse();
+  const reversedWord = reversedArray.join("");
+  if (word === reversedWord) {
+    return true;
+  } else {
+    return false
+  }
 }
 
 /* 
-  Add your pseudocode here
+build function that accepts one string as parameter
+test string to see if string forward === string backward
+if true, return true
+if false, return false
+
+
 */
 
 /*
-  Add written explanation of your solution here
+write a function that takes in one string(input), checks to see if that string
+is a palindrome(Same forward and backward), and returns true or false 
+depending on if it's a palindrome or not
 */
 
 // You can run `node index.js` to view these console logs
@@ -16,10 +30,13 @@ if (require.main === module) {
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
 
-  console.log("");
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome('tenet'));
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome('algorithm'));
 }
 
 module.exports = isPalindrome;
